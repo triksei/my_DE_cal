@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Specify UTF-8 character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design -->
+    <title>Differential Calculator</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+</head>
+<body>
+
+<h1 style="margin-top: 100px;">Differential Calculator</h1>
+<!-- Welcome Section -->
+<div class="container" id="welcome-section">
+  <div class="card">
+    <h2><font size="6.5">WELCOME</font></h2>
+    <p>This DE calculator focuses on solving growth/decay and Newton's cooling/heating math problems.<br> This website is a project for EMATH 213 to be submitted to Engr. Ramel Sigue.</p>
+    <p>&copy; 2024 Trixie Grace Batiquin - All Rights Reserved</p>
+  </div>
+  <div class="card">
+    <h2><font size="6">Explore Growth and Decay Calculator</font></h2>
+    <div style="height: 18px;"></div> <div style="height: 19px;"></div>
+    <button class="button" onclick="showGrowthDecayCalculator()">Start</button>
+  </div>
+  <div class="card">
+    <h2><font size="6">Explore Newton's Law of Cooling/Heating Calculator</font></h2>
+    <button class="button" onclick="showNewtonCalculator()">Start</button>
+  </div>
+</div>
+
+<!-- Growth and Decay Calculator Section -->
+<div class="container hidden" id="growth-decay-section">
+  <div class="box left-box">
+    <font size="6 "> GROWTH<br>AND<br>DECAY</font> 
+    <div style="height: 20px;"></div>
+    <button class="button" onclick="showWelcomeSection()">Back</button> <!-- Back Button -->
+    <div style="height: 80px;"></div>
+    <p><font size="4">&copy; 2024 Trixie Grace Batiquin - All Rights Reserved </font></p>
+  </div>
+  <div class="box right-box">
+    <div class="select-box">
+      <span>Select an option:</span>
+      <select id="growthDecaySelect" onchange="handleGrowthDecaySelection()">
+        <option value="option1">Select and Calculate</option>
+        <option value="populationGrowth">Determine the population and growth rate</option>
+        <option value="radiumDecay">Determine the amount at a certain time(t2)</option>
+      </select>
+    </div>
+    
+    <div id="populationGrowthSection" class="hidden">
+      <h2>Population Growth Calculator</h2>
+      <label for="P0">Initial Population (P0):</label>
+      <input type="number" id="P0" required><br>
+      <label for="P1">Population (P1):</label>
+      <input type="number" id="P1" required><br>
+      <label for="t1">Time (t1 in years):</label>
+      <input type="number" id="t1" required><br>
+      <label for="P2">Time (t2 in years) to predict (P2):</label>
+      <input type="number" id="P2" required><br>
+      <div style="height: 90px;"></div>
+      <button class="button" onclick="calculatePopulation()">Calculate</button>
+      <div id="populationResult" class="result hidden"></div>
+    </div>
+    <div id="radiumDecaySection" class="hidden">
+      <h2>Radium Decay Calculator</h2>
+      <label for="Q0">Initial Amount of Radium (Q0):</label>
+      <input type="number" id="Q0" required><br>
+      <label for="Q1">Amount of Radium (Q1):</label>
+      <input type="number" id="Q1" required><br>
+      <label for="t1Radium">Time (t1):</label>
+      <input type="number" id="t1Radium" required><br>
+      <label for="unitRadium">Radium Unit:</label>
+      <input type="text" id="unitRadium" required><br>
+      <label for="unitTime">Time Unit:</label>
+      <input type="text" id="unitTime" required><br>
+      <label for="t2">Time(t2) to predict (Q2):</label>
+      <input type="number" id="t2" required><br>
+      <div style="height: 37px;"></div>
+      <button class="button" onclick="calculateRadium()">Calculate</button>
+      <div id="radiumResult" class="result hidden"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Newton's Law of Cooling/Heating Section -->
+<div class="container hidden" id="newton-section">
+  <div class="box left-box">
+    <font size="6"> NEWTON's LAW OF COOLING/ HEATING</font>
+    <div style="height: 20px;"></div>
+    <button class="button" onclick="showWelcomeSection()">Back</button> <!-- Back Button -->
+    <div style="height: 50px;"></div>
+    <p><font size="4">&copy; 2024 Trixie Grace Batiquin - All Rights Reserved </font></p>
+  </div>
+  <div class="box right-box">
+    <div class="select-box">
+      <span>Select an option:</span>
+      <select id="newtonLawSelect" onchange="handleNewtonsLawSelection()">
+        <option value="option1">Select and Calculate</option>
+        <option value="lawOfcooling">Determine Temperature at a given time</option>
+        <option value="lawOfheating">Determine time to reach a certain temperature</option>
+      </select>
+    </div>
+    
+    <div id="lawOfcoolingSection" class="hidden">
+      <h2>Newton's Law of Cooling Calculator</h2>
+      <label for="tempUnitCooling">Enter temperature unit:</label>
+      <input type="text" id="tempUnitCooling" required><br>
+      <label for="timeUnitCooling">Enter time unit:</label>
+      <input type="text" id="timeUnitCooling" required><br>
+      <label for="T0">Initial temperature (T0):</label>
+      <input type="number" id="T0" required><br>
+      <label for="TmCooling">Ambient temperature (Tm):</label>
+      <input type="number" id="TmCooling" required><br>
+      <label for="T1">Temperature after a given time (T1):</label>
+      <input type="number" id="T1" required><br>
+      <label for="t1Cooling">Time corresponding to T1 (t1):</label>
+      <input type="number" id="t1Cooling" required><br>
+      <label for="tReqCooling">Time to calculate the temperature (t2):</label>
+      <input type="number" id="tReqCooling" required><br>
+      <div style="height: 10px;"></div>
+      <button class="button" onclick="calculateCooling()">Calculate</button>
+      <div id="coolingResult" class="result hidden"></div>
+    </div>
+    <div id="lawOfheatingSection" class="hidden">
+      <h2>Newton's Law of Heating Calculator</h2>
+      <label for="tempUnitHeating">Enter temperature unit:</label>
+      <input type="text" id="tempUnitHeating" required><br>
+      <label for="timeUnitHeating">Enter time unit:</label>
+      <input type="text" id="timeUnitHeating" required><br>
+      <label for="T0Heating">Initial temperature (T0):</label>
+      <input type="number" id="T0Heating" required><br>
+      <label for="TmHeating">Ambient temperature (Tm):</label>
+      <input type="number" id="TmHeating" required><br>
+      <label for="t1Heating">Time (t1):</label>
+      <input type="number" id="t1Heating" required><br>
+      <label for="T1Heating">Temperature (T1) after t1:</label>
+      <input type="number" id="T1Heating" required><br>
+      <label for="TReqHeating">Target temperature to calculate time (T_req):</label>
+      <input type="number" id="TReqHeating" required><br>
+      <div style="height: 10px;"></div>
+      <button class="button" onclick="calculateHeating()">Calculate</button>
+      <div id="heatingResult" class="result hidden"></div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script> <!-- Link to external JavaScript -->
+</body>
+</html>
