@@ -1,0 +1,107 @@
+body {
+    background-color: #734f96;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 90vh;
+}
+
+.container {
+    display: flex;
+    gap: 25px;
+    margin-top: 90px;
+}
+
+.card {
+    background-color: #CDC1FF;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    height: 300px;
+}
+
+h1 {
+    color: #EBE6F5;
+    margin-bottom: 20px;
+    font-size: 90px;
+}
+
+h2 {
+    color: #7752BD;
+}
+
+p {
+    color: #3F054F;
+    line-height: 1.5;
+}
+
+.button {
+    background-color: #734f96;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline from link */
+    display: inline-block; /* Make the link behave like a button */
+}
+
+.hidden {
+    display: none; /* Class to hide elements */
+}
+
+.box {
+    background-color: #CDC1FF;
+    border-radius: 10px;
+    padding: 20px;
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.left-box {
+    width: 200px; /* Set a fixed width for the left box */
+}
+
+.right-box {
+    width: 800px; /* Allow the right box to take up the remaining space */
+    height: 400px;
+}
+
+.select-box {
+    background-color: #734f96;
+    border-radius: 10px;
+    padding: 10px;
+    color: #EBE6F5;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    width: 97%; /* Make the select box take the full width of the right box */
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.select-box > span {
+    margin-right: 10px;
+}
+
+select {
+    font-size: 20px; /* Increase font size of the select options */
+    padding: 10px; /* Add padding for better appearance */
+    border-radius: 5px; /* Rounded corners for the select box */
+    width: 60%; /* Make the select box take the full width of the select-box */
+    height: 50px; /* Increase height for better usability */
+}
+
+.result {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
