@@ -1,5 +1,5 @@
 body {
-    background-color: #734f96;
+    background-color: #2C1B47;
     font-family: 'Times New Roman', Times, serif;
     display: flex;
     flex-direction: column;
@@ -14,74 +14,79 @@ body {
 }
 
 .card {
-    background-color: #CDC1FF;
+    background-color: #DCCAE9;
     border-radius: 10px;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(11, 2, 5, 0.2);
     width: 250px;
     height: 300px;
 }
 
 h1 {
-    color: #EBE6F5;
+    color: #DCCAE9;
     margin-bottom: 20px;
     font-size: 90px;
 }
 
 h2 {
-    color: #7752BD;
+    color: #724C9D;
 }
 
 p {
-    color: #3F054F;
+    color: #0B0205;
     line-height: 1.5;
 }
 
 .button {
-    background-color: #734f96;
-    color: #FFFFFF;
+    background-color: #724C9D;
+    color: #DCCAE9;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    text-decoration: none; /* Remove underline from link */
-    display: inline-block; /* Make the link behave like a button */
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #9356A0;
 }
 
 .hidden {
-    display: none; /* Class to hide elements */
+    display: none;
 }
 
 .box {
-    background-color: #CDC1FF;
+    background-color: #DCCAE9;
     border-radius: 10px;
     padding: 20px;
-    color: #000;
+    color: #0B0205;
     font-size: 24px;
     font-weight: bold;
     text-align: center;
 }
 
 .left-box {
-    width: 200px; /* Set a fixed width for the left box */
+    width: 200px;
 }
 
 .right-box {
-    width: 800px; /* Allow the right box to take up the remaining space */
+    width: 800px;
     height: 400px;
 }
 
 .select-box {
-    background-color: #734f96;
+    background-color: #724C9D;
     border-radius: 10px;
     padding: 10px;
-    color: #EBE6F5;
+    color: #DCCAE9;
     font-size: 24px;
     font-weight: bold;
     text-align: center;
-    width: 97%; /* Make the select box take the full width of the right box */
-    border: 1px solid #000;
+    width: 97%;
+    border: 1px solid #0B0205;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -92,16 +97,38 @@ p {
 }
 
 select {
-    font-size: 20px; /* Increase font size of the select options */
-    padding: 10px; /* Add padding for better appearance */
-    border-radius: 5px; /* Rounded corners for the select box */
-    width: 60%; /* Make the select box take the full width of the select-box */
-    height: 50px; /* Increase height for better usability */
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 60%;
+    height: 50px;
+    background-color: #DCCAE9;
+    color: #0B0205;
+    border: 1px solid #724C9D;
 }
 
 .result {
     margin-top: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #724C9D;
     padding: 10px;
-    background-color: #f9f9f9;
+    background-color: #DCCAE9;
+    color: #0B0205;
+}
+
+input[type="number"],
+input[type="text"] {
+    background-color: #DCCAE9;
+    border: 1px solid #724C9D;
+    padding: 8px;
+    border-radius: 5px;
+    color: #0B0205;
+    width: 200px;
+    margin: 5px 0;
+}
+
+label {
+    color: #0B0205;
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
 }
